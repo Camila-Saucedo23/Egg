@@ -45,4 +45,5 @@ public class Eje12 {
  System.out.println("Cadenas correctas " + correcta);
  System.out.println("Cadenas incorrectas " + incorrecta);
     
+ }
 }
