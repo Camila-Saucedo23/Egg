@@ -374,6 +374,168 @@ System.out.println("Hay " + contador1 + " numeros de 1 digito.");
         System.out.println("Hay " + contador4 + " numeros de 4 digitos.");
         System.out.println("Hay " + contador5 + " numeros de 5 digitos.");
 
+EJERCICIO 17 OTRA FORMA 
+  Scanner leer = new Scanner(System.in);
+        int t, j = 0;
+
+        System.out.println("Ingresa el tamaño del vector");
+        t = leer.nextInt();
+        int vect[] = new int[t];
+
+        for (int i = 0; i < vect.length; i++) {
+            vect[i] = (int) (Math.random() *1002);
+            System.out.println(vect[i]);
+        }
+        c1(vect, j);
+        c2(vect, j);
+        c3(vect, j);
+        c4(vect, j);
+        c5(vect, j);
+        System.out.println("\n1 Solo Digito: " + c1(vect,j));
+        System.out.println("2 Solo Digito: " + c2(vect,j));
+        System.out.println("3 Solo Digito: " + c3(vect,j));
+        System.out.println("4 Solo Digito: " + c4(vect,j));
+        System.out.println("5 Solo Digito: " + c5(vect,j));
+    }
+
+    public static int c1(int vect[], int j) {
+        int d;
+        for (int i = 0; i < vect.length; i++) {
+            d = vect[i];
+            d = Integer.toString(d).length();
+
+            switch (d) {
+                case 1:
+                    j++;
+                    break;
+            }
+        }
+        return j;
+
+    }
+    public static int c2(int vect[], int j) {
+        int d;
+        for (int i = 0; i < vect.length; i++) {
+            d = vect[i];
+            d = Integer.toString(d).length();
+
+            switch (d) {
+                case 2:
+                    j++;
+                    break;
+            }
+        }
+        return j;
+
+    }
+    public static int c3(int vect[], int j) {
+        int d;
+        for (int i = 0; i < vect.length; i++) {
+            d = vect[i];
+            d = Integer.toString(d).length();
+
+            switch (d) {
+                case 3:
+                    j++;
+                    break;
+            }
+        }
+        return j;
+
+    }
+    public static int c4(int vect[], int j) {
+        int d;
+        for (int i = 0; i < vect.length; i++) {
+            d = vect[i];
+            d = Integer.toString(d).length();
+
+            switch (d) {
+                case 4:
+                    j++;
+                    break;
+            }
+        }
+        return j;
+
+    }
+    public static int c5(int vect[], int j) {
+        int d;
+        for (int i = 0; i < vect.length; i++) {
+            d = vect[i];
+            d = Integer.toString(d).length();
+
+            switch (d) {
+                case 5:
+                    j++;
+                    break;
+            }
+        }
+        return j;
+
+    }
+
+}
+
+EJERCICIO 17 OTRA FORMA 2 
+
+Scanner leer = new Scanner(System.in);
+        int[] vector = new int[10];
+        llenarVector(vector);
+    }
+    //Sub proceso
+    public static void llenarVector(int[] vector) {
+
+        for (int i = 0; i < vector.length; i++) {
+            int num2 = (int) (Math.random() * 10000);
+            vector[i] = num2;
+            System.out.print("[" + vector[i] + "] ");
+        }
+        int n;
+        int cont1=0;
+        int cont2=0;
+        int cont3=0;
+        int cont4=0;
+        int cont5=0;
+        for (int i = 0; i < vector.length; i++) {
+         
+            switch (n = (int)(Math. log10(vector[i])+1)){
+                case 1:
+                    cont1=cont1+1;
+                    break;
+                case 2:
+                    cont2=cont2+1;
+                    break;
+                case 3:
+                    cont3=cont3+1;
+                    break;
+                case 4:
+                    cont4=cont4+1;
+                    break;
+                case 5:
+                    cont5=cont5+1;
+                    break;
+            }
+        }
+        System.out.println("");
+        if (cont1 >0){
+            System.out.println("HAY "+ cont1 +" de un solo digito");
+        }
+        if (cont2 >0){
+           System.out.println("HAY "+ cont2 +" de dos  digito"); 
+        }
+        if (cont3 >0){
+          System.out.println("HAY "+ cont3 +" de tres digito");  
+        }
+        if (cont4 >0){
+           System.out.println("HAY "+ cont4 +" de cuatro digito"); 
+        }
+        if (cont5 >0){
+          System.out.println("HAY "+ cont5 +" de cinco  digito");  
+        }
+    }
+    
+}
+
 
 EJERCICIO 18 
 
@@ -406,4 +568,267 @@ System.out.println("M A T R I Z   T R A N S P U E S T A");
 
 EJERCICIO 19
 
+Scanner leer = new Scanner(System.in);
+        
+        int[][] matrizA = new int [3][3];
+        int i,j ;
+        
+        System.out.println("Lenna la matriz de 9");
+        //Llenado matrizA
+        for (i=0; i<3; i++){
+            for (j=0; j<3; j++){
+               matrizA[i][j] = leer.nextInt(); 
+            }
+        }
+        //Imprimir matrizA
+        int n;
+        for (i=0; i<3; i++){
+            for (j=0; j<3; j++){
+                n= matrizA[i][j];
+                switch (Integer.toString(n).length()){
+                case 1:
+                    System.out.print("[ "+ matrizA[i][j]+"]");
+                    break;
+                case 2:
+                    System.out.print("["+ matrizA[i][j]+"]");
+                    break;
+                }
+            }
+            System.out.println("");
+        }
+        int[][] matrizB = new int [3][3];
+        //llenado de la matrizB
+        for (i=0; i<3; i++){
+            for (j=0; j<3; j++){
+               matrizB[j][i] = matrizA[i][j];    
+            }
+        }
+        System.out.println("");
+        //imprimir la matrizB
+        for (i=0; i<3; i++){
+            for (j=0; j<3; j++){
+                n= matrizB[i][j];
+               switch (Integer.toString(n).length()){
+                case 1:
+                    System.out.print("[ "+ matrizB[i][j]+"]");
+                    break;
+                case 2:
+                    System.out.print("["+ matrizB[i][j]+"]");
+                    break;
+                }
+            }
+            System.out.println("");
+        }
+        int[][] matrizC = new int [3][3];
+        //llenado de la matrizB
+        for (i=0; i<3; i++){
+            for (j=0; j<3; j++){
+               matrizC[i][j] =-matrizB[i][j];    
+            }
+        }
+        System.out.println("");
+        //imprimir la matrizB
+        for (i=0; i<3; i++){
+            for (j=0; j<3; j++){
+                n= matrizC[i][j];
+               switch (Integer.toString(n).length()){
+                case 1:
+                    System.out.print("[ "+ matrizC[i][j]+"]");
+                    break;
+                case 2:
+                    System.out.print("["+ matrizC[i][j]+"]");
+                    break;
+                }
+            }
+            System.out.println("");
+        }
+        System.out.println("");
+        //comparacion
+        int contador=0;
+        for (i=0; i<3; i++){
+            for (j=0; j<3; j++){
+                if (matrizA[i][j]==matrizC[i][j]){
+                    contador=contador+1;
+                }
+            }
+        }
+        
+        if (contador==9){
+            System.out.println("La matriz SI Anti simetrica");
+        }else{
+            System.out.println("La matriz NO es Anti simetrica");
+        }
+    }
+}
 
+EJERCICIO 20
+ Scanner sc=new Scanner(System.in);
+        int sumaF=0,sumaC=0,sumaD1=0,sumaD2=0,j,sumaC2=0,sumaC3=0, conta=0;
+        int[][] cm = new int[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int k = 0; k < 3; k++) {
+                 cm[i][k]=sc.nextInt();
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+            for (j = 0; j < 3; j++) {
+                sumaF+=cm[i][j];  
+            }
+            if(sumaF!=15){
+                break;
+            }else{conta++;}
+            sumaF=0;
+            sumaC3+=cm[i][2];
+            sumaC2+=cm[i][1];
+            sumaC+=cm[i][0];
+            sumaD1+=cm[i][i];
+            sumaD2+=cm[i][j-1];  
+        }
+        if(conta==3 && (sumaC3+sumaC2+sumaC+sumaD1+sumaD2)%15==0){
+            System.out.println("SI");
+        }else{
+             System.out.println("NO");
+        }
+    }
+}
+
+OTRA FORMA EJERCICIO 20 
+
+Scanner leer = new Scanner(System.in);
+        
+        int[][] matriz = new int [3][3];
+        int i,j ;
+        
+        System.out.println("Llena la matriz con numero del 1 al 9");
+        //Llenado matrizA
+        for (i=0; i<3; i++){
+            for (j=0; j<3; j++){
+               matriz[i][j] = leer.nextInt(); 
+            }
+        }
+        for (i=0; i<3; i++){
+            for (j=0; j<3; j++){
+                System.out.print("["+matriz[i][j]+"]");
+            }
+            System.out.println("");
+        }
+        int suma;
+        int diagonal=15;
+        int filas=15;
+        int columnas=15;
+        for (i=0; i<3; i++){
+            for(j=0; j<3; j++){
+                if (matriz[i][j]<1 || matriz[i][j]>9){
+                    System.out.println("La matriz no es magica por que ingresate una numero fuera del rango");
+                    break;
+                } else {
+                    suma=matriz[0][0]+matriz[0][1]+matriz[0][2];
+                    if (suma==filas){
+                        suma=0;
+                        suma=matriz[1][0]+matriz[1][1]+matriz[1][2];
+                        if (suma==filas){
+                            suma=0;
+                            suma=matriz[2][0]+matriz[2][1]+matriz[2][2];
+                            if (suma==filas){
+                                suma=0;
+                                suma=matriz[0][0]+matriz[1][0]+matriz[2][0];
+                                if(suma==columnas){
+                                 suma=0;   
+                                 suma=matriz[0][1]+matriz[1][1]+matriz[2][1];
+                                 if (suma== columnas){
+                                     suma=0;
+                                     suma=matriz[0][2]+matriz[1][2]+matriz[2][2];
+                                     if (suma==columnas){
+                                         suma=0;
+                                         suma=matriz[0][0]+matriz[1][1]+matriz[2][2];
+                                         if (suma==diagonal){
+                                             suma=0;
+                                             suma=matriz[2][0]+matriz[1][1]+matriz[0][2];
+                                             if (suma==diagonal){
+                                                 System.out.println("LA MATRIZ ES MAGICA");
+                                                 break;
+                                             }
+                                         }else{
+                                             System.out.println("La matriz no es magica");
+                                        break;
+                                         }
+                                     }else{
+                                         System.out.println("La matriz no es magica");
+                                        break;
+                                     }
+                                 }else{
+                                     System.out.println("La matriz no es magica");
+                                    break;
+                                 }
+                                }else{
+                                    System.out.println("La matriz no es magica");
+                                     break;
+                                }
+                            }
+                        }else{
+                            System.out.println("La matriz no es magica");
+                        break;
+                        }
+                        
+                    }else{
+                        System.out.println("La matriz no es magica");
+                        break;
+                    }
+                }
+            }
+            break;
+        }
+        
+    }
+    
+}
+
+EJERCICIO 21
+
+Scanner leer = new Scanner(System.in);
+        int [][] matriz = {{2,4,4,1,5},{6,6,9,5,1},{2,4,4,9,7},{6,6,9,9,7},{8,10,12,9,7}};
+        int i,j ;
+        
+        System.out.println("MATRIZ");
+        //imprimir matriz [10][10]
+        int n;
+        for (i=0; i<4; i++){
+            for (j=0; j<4; j++){
+                n= matriz[i][j];
+                switch (Integer.toString(n).length()){
+                case 1:
+                    System.out.print("["+ matriz[i][j]+"]");
+                    break;
+                case 2:
+                    System.out.print("[ "+ matriz[i][j]+"]");
+                    break;
+                case 3:
+                    System.out.print("[ "+ matriz[i][j]+"]");
+                    break;
+                }
+            }
+            System.out.println("");
+        }
+System.out.println("MATRIZ P");
+        //Llenado matrizA
+        int [][] matrizP = {{2,4,4},{6,6,9},{8,10,12}};
+        //imprimir matriz P
+        for (i=0; i<3; i++){
+            for (j=0; j<3; j++){
+                n= matriz[i][j];
+                switch (Integer.toString(n).length()){
+                case 1:
+                    System.out.print("["+ matriz[i][j]+"]");
+                    break;
+                case 2:
+                    System.out.print("[ "+ matriz[i][j]+"]");
+                    break;
+                case 3:
+                    System.out.print("[ "+ matriz[i][j]+"]");
+                    break;
+                }
+            }
+            System.out.println("");
+        }
+    } 
+}
